@@ -21,10 +21,11 @@ def all_odd(number_list):
         []
 
     """
-    odd_num_list = []
-    for num in number_list:
-        if num % 2 != 0:
-            odd_num_list.append(num)
+    odd_num_list = [num for num in number_list if num % 2 != 0]
+    # odd_num_list = []
+    # for num in number_list:
+    #     if num % 2 != 0:
+    #         odd_num_list.append(num)
     return odd_num_list
 
 
@@ -38,11 +39,12 @@ def all_even(number_list):
         []
 
     """
-    even_num_list = []
+    even_num_list = [num for num in number_list if num % 2 == 0]
+    # even_num_list = []
 
-    for num in number_list:
-        if num % 2 == 0:
-            even_num_list.append(num)
+    # for num in number_list:
+    #     if num % 2 == 0:
+    #         even_num_list.append(num)
 
     return even_num_list
 
@@ -82,10 +84,13 @@ def long_words(word_list):
         []
 
     """
-    four_char_words = []
-    for word in word_list:
-        if len(word)>4 :
-            four_char_words.append(word)
+    # four_char_words = []
+    # for word in word_list:
+    #     if len(word)>4 :
+    #         four_char_words.append(word)
+
+    four_char_words = [word for word in word_list if len(word) > 4]
+
     return four_char_words
 
 
@@ -101,10 +106,12 @@ def smallest_int(number_list):
         True
 
     """
-    smallest = None
+    #smallest = None
+    # if number_list:
+    #     smallest = min(number_list)
 
-    if number_list:
-        smallest = min(number_list)
+
+    smallest = [min(number_list) if number_list else None]
 
     return smallest
 
@@ -121,10 +128,12 @@ def largest_int(number_list):
         True
 
     """
-    largest = None
+    # largest = None
 
-    if number_list:
-        largest = max(number_list)
+    # if number_list:
+    #     largest = max(number_list)
+
+    largest = [max(number_list) if number_list else None]
 
     return largest
 
@@ -141,10 +150,12 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
-    halved_list = []
+    # halved_list = []
 
-    for num in number_list :
-        halved_list.append(float(num) / 2)
+    # for num in number_list :
+    #     halved_list.append(float(num) / 2)
+
+    halved_list = [float(num)/2 for num in number_list]
 
     return halved_list
 
@@ -156,10 +167,12 @@ def word_lengths(word_list):
         [5, 3, 5, 4]
 
     """
-    len_list = []
+    # len_list = []
 
-    for num in word_list :
-        len_list.append(len(num))
+    # for word in word_list :
+    #     len_list.append(len(word))
+
+    len_list = [len(word) for word in word_list]
 
     return len_list
 
@@ -278,10 +291,8 @@ def advanced_join_strings(list_of_words):
         'Pretzel'
 
     """
-    single_string = ''
 
     single_string = ', '.join(list_of_words)
-
     return single_string
 
 # END OF ASSIGNMENT: You can ignore everything below.
